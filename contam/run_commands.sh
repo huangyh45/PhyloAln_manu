@@ -63,6 +63,11 @@ done
 PhyloAln/PhyloAln -d orthogroup/ortho/OGs_fly -c contam.config -f fasta -o PhyloAln_contam -p 20 -m codon -u SLEBA
 PhyloAln/PhyloAln -d orthogroup/ortho/OGs_fly -c contam.config -f fasta -o PhyloAln_contam_b -p 20 -m codon -u SLEBA -b
 
+# calculate the average percent completeness and identity, and precision and recall of clean, foreign and cross scontamination reads of PhyloAln results with or without assembly step
+./sum_contam.py
+./sum_contam_b.py
+# the calculated precision and recall needs to be further managed in manual, such as removal of invalid zeros or invalid target read counts in those five genes where target reads were excluded, and calculation of average values
+
 # run PhyloAln to generate the alignments of 'outgroup contamination' from the target species, need to manually replace PhyloAln/lib/assemble.py with assemble.add_out.py first
 PhyloAln/PhyloAln -d orthogroup/ortho/OGs_fly -c contam.config -f fasta -o PhyloAln_contam_b_add -p 20 -m codon -u SLEBA -b
 
