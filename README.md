@@ -7,4 +7,4 @@ ladybird: data and scripts used in the analyses of the dataset of ladybird beetl
 plastome: data and scripts used in the analyses of the dataset of pepper plastomes  
 UCE: data and scripts used in the analyses of the dataset of turtle ultraconserved elements (UCEs)  
 
-It should be noticed that the commands provided in each dataset folder are mainly used to provide the parameters for the analyses in the manuscript and may fail to directly rerun due to different file paths, installation and configuration. 
+It should be noticed that the commands provided in each dataset folder are mainly used to provide the parameters for the analyses in the manuscript and may fail to directly rerun due to different file paths, installation and configuration. Other tools are required in the commands, including PhyloAln and its auxiliary scripts, gffread, OrthoFinder, MAFFT, trimAl, ART, ReadSim, Trinity, CroCo, BLAST, EvidentialGene, Read2Tree, Orthograph, IQ-TREE, and IDBA. Detailed description of the procedures can be seen in the methods in the manuscript.
