@@ -12,3 +12,5 @@ phyloaln_b_add.aatree.rooted.tre: phylogeny of amino acid alignments of 'outgrou
 phyloaln_b_add.speciestree.rooted.tre: phylogeny of CDS alignments of 'outgroup contamination' from the target species
 run_commands.sh: the commands of the analyses in the dataset
 sample_reads_contam.py: a custom script to generate the simulated contamination dataset by randomly selected reads from the species sources
+sum_contam.py: a custom script to summarize the average percent completeness and identity, and precision and recall of clean, foreign and cross contamination reads of PhyloAln with the assembly step
+sum_contam_b.py: a custom script to summarize the average percent completeness and identity, and precision and recall of clean, foreign and cross contamination reads of PhyloAln without the assembly step
