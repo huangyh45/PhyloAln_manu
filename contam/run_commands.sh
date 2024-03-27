@@ -1,4 +1,5 @@
 # simulate the contaminated reads, other preparation steps has been conducted in the commands of the lifetree dataset
+# the transcripts of five respectively selected single-copy genes in three target species were removed mannually from $sp.transcript.fasta first
 cd dataset
 for file in $sp.transcript.fasta
 do
