@@ -3,13 +3,13 @@ PhyloAln/scripts/select_seqs.py . Anolis_carolinensis,Chelonia_mydas,Chrysemys_p
 mv ref/all.fasta ref.fasta
 
 # run PhyloAln
-time /public/lihaosen/PhyloAln/PhyloAln -a ref.fasta -c UCE.config -f fastq -p 20 -u Homo_sapiens19 --ref_split_len 1000 -b
+time PhyloAln/PhyloAln -a ref.fasta -c UCE.config -f fastq -p 20 -u Homo_sapiens19 --ref_split_len 1000 -b
 
 # calculate the percent completeness and identity of PhyloAln results
 cp PhyloAln_out/nt_out/aln.concatenated.fa PhyloAln_out/nt_out/all.fasta
 for sp in `cut -f 1 UCE.config`
 do
-	../scripts/test_effect.py .:$sp PhyloAln_out/nt_out:$sp $sp.UCE.tsv N . .fasta Anolis_carolinensis,Chelonia_mydas,Chrysemys_picta,Dermatemys_sp,Homo_sapiens19,Pelodiscus_sinensis,Python_molurus,Sphenodon_punctatus,Trachemys_scripta,Crocodylus_porosus,Gallus_gallus
+	PhyloAln/scripts/test_effect.py .:$sp PhyloAln_out/nt_out:$sp $sp.UCE.tsv N . .fasta Anolis_carolinensis,Chelonia_mydas,Chrysemys_picta,Dermatemys_sp,Homo_sapiens19,Pelodiscus_sinensis,Python_molurus,Sphenodon_punctatus,Trachemys_scripta,Crocodylus_porosus,Gallus_gallus
 done
 
 # phylogenetic reconstruction for PhyloAln
