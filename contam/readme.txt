@@ -1,0 +1,14 @@
+CDS_trim: (in lifetree folder) 46 single-copy gene alignments among 15 species using OrthoFinder + MAFFT + trimAl
+OGs_fly_read2tree: Read2Tree result alignments
+phyloaln_b_add_nt_out: alignments of 'outgroup contamination' from the target species
+phyloaln_b_nt_out: PhyloAln result alignments without assembly step
+phyloaln_nt_out: PhyloAln result alignments with assembly step
+assemble.add_out.py: a modified assemble.py module to generate the alignments of 'outgroup contamination' from the target species
+assemble.debug: a modified assemble.py module to obtain the information of species source of the reads removed ot retained during decontamination
+contam.config: PhyloAln configure file
+phyloaln_b.aatree.rooted.tre: phylogeny of amino acid PhyloAln result alignments without assembly step
+phyloaln_b.speciestree.rooted.tre: phylogeny of CDS PhyloAln result alignments without assembly step
+phyloaln_b_add.aatree.rooted.tre: phylogeny of amino acid alignments of 'outgroup contamination' from the target species
+phyloaln_b_add.speciestree.rooted.tre: phylogeny of CDS alignments of 'outgroup contamination' from the target species
+run_commands.sh: the commands of the analyses in the dataset
+sample_reads_contam.py: a custom script to generate the simulated contamination dataset by randomly selected reads from the species sources
