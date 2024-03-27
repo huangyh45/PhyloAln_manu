@@ -1,7 +1,7 @@
 # simulate the contaminated reads, other preparation steps has been conducted in the commands of the lifetree dataset
-# the transcripts of five respectively selected single-copy genes in three target species were removed mannually from $sp.transcript.fasta first
+# the transcripts of five respectively selected single-copy genes in three target species were removed mannually from ${target_species}.transcript.fasta first
 cd dataset
-for file in $sp.transcript.fasta
+for file in *.transcript.fasta
 do
 	sp=`basename $file .transcript.fasta`
 	art_illumina -ss HS25 -i $sp.transcript.fasta -p -l 100 -f 10 -m 200 -s 10 -o ${sp}trans_10X
@@ -30,11 +30,11 @@ PhyloAln/scripts/test_effect.py orthogroup/ortho/OrthoFinder/CDS_trim:DSIMU Phyl
 PhyloAln/scripts/test_effect.py orthogroup/ortho/OrthoFinder/CDS_trim:DMELA PhyloAln_contam_b/nt_out:DMELA DMELAcontam_b.PhyloAln.tsv N . .fa DBUSC,DMOJA,DPSEU,DYAKU,SLEBA
 
 # run Read2Tree
-read2tree --standalone_path orthogroup/ortho/OGs_fly_unaln --output_path read2tree_fly --reference --dna_reference orthogroup/all.cds.fasta
-read2tree --output_path read2tree_contam --standalone_path orthogroup/ortho/OGs_fly_unaln --reads dataset/DMELAcontam_1.fq dataset/DMELAcontam_2.fq --threads 20 --dna_reference orthogroup/all.cds.fasta -s DMELA
-read2tree --output_path read2tree_contam --standalone_path orthogroup/ortho/OGs_fly_unaln --reads dataset/DSIMUcontam_1.fq dataset/DSIMUcontam_2.fq --threads 20 --dna_reference orthogroup/all.cds.fasta -s DSIMU
-read2tree --output_path read2tree_contam --standalone_path orthogroup/ortho/OGs_fly_unaln --reads dataset/DWILLcontam_1.fq dataset/DWILLcontam_2.fq --threads 20 --dna_reference orthogroup/all.cds.fasta -s DWILL
-read2tree --standalone_path orthogroup/ortho/OGs_fly_unaln --output_path read2tree_contam --merge_all_mappings
+time read2tree --standalone_path orthogroup/ortho/OGs_fly_unaln --output_path read2tree_fly --reference --dna_reference orthogroup/all.cds.fasta
+time read2tree --output_path read2tree_contam --standalone_path orthogroup/ortho/OGs_fly_unaln --reads dataset/DMELAcontam_1.fq dataset/DMELAcontam_2.fq --threads 20 --dna_reference orthogroup/all.cds.fasta -s DMELA
+time read2tree --output_path read2tree_contam --standalone_path orthogroup/ortho/OGs_fly_unaln --reads dataset/DSIMUcontam_1.fq dataset/DSIMUcontam_2.fq --threads 20 --dna_reference orthogroup/all.cds.fasta -s DSIMU
+time read2tree --output_path read2tree_contam --standalone_path orthogroup/ortho/OGs_fly_unaln --reads dataset/DWILLcontam_1.fq dataset/DWILLcontam_2.fq --threads 20 --dna_reference orthogroup/all.cds.fasta -s DWILL
+time read2tree --standalone_path orthogroup/ortho/OGs_fly_unaln --output_path read2tree_contam --merge_all_mappings
 
 # calculate the percent completeness and identity of Read2Tree results
 for file in read2tree_contam/06_align_merge_dna/*.fa
