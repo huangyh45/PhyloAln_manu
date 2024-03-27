@@ -1,5 +1,5 @@
 # assemble the transcriptomes via a custom script for 00-04 batches respectively
-time /public/lihaosen/software/script/transassemble.pl -n 20 -p 1 -T -C 1 -R 2 -E
+time ./transassemble.pl -n 20 -p 1 -T -C 1 -R 2 -E
 
 # run OrthoFinder and generate the CDS alignments via custom scripts
 time ./orthogroup.pl -g genome -f gff -y .gff3 -a trans_aa -c trans_cds -p 20 -b -e -t -k
@@ -9,6 +9,7 @@ cd ..
 
 # remove the target sequences
 PhyloAln/scripts/select_seqs.py ortho/OrthoFinder/CDS_trim ABIPU,CIMPU,CMONT,CSEPT,DHELO,HAXYR,HSEDE,HVIGI,HVIMA,MDISC,NPUMI,PJAPO ortho/genome_ortho/CDS_trim
+PhyloAln/scripts/select_seqs.py ortho/OrthoFinder/Orthogroup_Sequences ABIPU,CIMPU,CMONT,CSEPT,DHELO,HAXYR,HSEDE,HVIGI,HVIMA,MDISC,NPUMI,PJAPO ortho/genome_ortho/unaln # only retain 1290 single-copy genes
 
 # run PhyloAln to obtain result alignment from read files of each batch
 time PhyloAln/PhyloAln -d ortho/genome_ortho/CDS_trim -c 00.config -f fastq -o PhyloAln_00 -p 20 -m codon -b -u DHELO
@@ -32,6 +33,15 @@ cd PhyloAln_all
 time PhyloAln/scripts/connect.pl -i aa_out -f X -b all.block -n
 time iqtree -s all.fas -p all.block -m MFP+MERGE -B 1000 -T AUTO --threads-max 20 --prefix speciestree
 cd ..
+
+# run Read2Tree
+time read2tree --standalone_path ortho/genome_ortho/unaln --output_path read2tree_out --reference --dna_reference orthogroup/all.cds.fasta
+for file in ortho/0*.faa
+do
+	sp=`basename $file .faa`
+	time read2tree --output_path read2tree_out --standalone_path ortho/genome_ortho/unaln --reads dataset/${sp}_1.fq.gz dataset/${sp}_2.fq.gz --threads 20 --dna_reference orthogroup/all.cds.fasta -s $sp
+done
+time read2tree --standalone_path ortho/genome_ortho/unaln --output_path read2tree_out --merge_all_mappings
 
 # calculate the percent completeness and identity of Read2Tree results
 for file in read2tree_out/06_align_merge_dna/*.fa
