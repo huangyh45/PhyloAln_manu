@@ -30,7 +30,7 @@ PhyloAln/scripts/test_effect.py orthogroup/ortho/OrthoFinder/CDS_trim:DSIMU Phyl
 PhyloAln/scripts/test_effect.py orthogroup/ortho/OrthoFinder/CDS_trim:DMELA PhyloAln_contam_b/nt_out:DMELA DMELAcontam_b.PhyloAln.tsv N . .fa DBUSC,DMOJA,DPSEU,DYAKU,SLEBA
 
 # run Read2Tree
-time read2tree --standalone_path orthogroup/ortho/OGs_fly_unaln --output_path read2tree_fly --reference --dna_reference orthogroup/all.cds.fasta
+time read2tree --standalone_path orthogroup/ortho/OGs_fly_unaln --output_path read2tree_contam --reference --dna_reference orthogroup/all.cds.fasta
 time read2tree --output_path read2tree_contam --standalone_path orthogroup/ortho/OGs_fly_unaln --reads dataset/DMELAcontam_1.fq dataset/DMELAcontam_2.fq --threads 20 --dna_reference orthogroup/all.cds.fasta -s DMELA
 time read2tree --output_path read2tree_contam --standalone_path orthogroup/ortho/OGs_fly_unaln --reads dataset/DSIMUcontam_1.fq dataset/DSIMUcontam_2.fq --threads 20 --dna_reference orthogroup/all.cds.fasta -s DSIMU
 time read2tree --output_path read2tree_contam --standalone_path orthogroup/ortho/OGs_fly_unaln --reads dataset/DWILLcontam_1.fq dataset/DWILLcontam_2.fq --threads 20 --dna_reference orthogroup/all.cds.fasta -s DWILL
