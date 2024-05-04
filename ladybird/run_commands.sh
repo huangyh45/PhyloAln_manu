@@ -54,7 +54,7 @@ for file in ortho/single_copy_ref/*.fa
 do
 	name=`basename $file .fa`
 	readal -in read2tree_out/03_align_aa/$name.phy -out read2tree_test/$name.ref_aa.fas -fasta
-	mafft --add ogs/$name.fa --localpair --maxiterate 1000 --thread 10 read2tree_test/$name.ref_aa.fas > read2tree_test/$name.aa_aln.fas
+	mafft --add ogs/$name.fa --keeplength --localpair --maxiterate 1000 --thread 10 read2tree_test/$name.ref_aa.fas > read2tree_test/$name.aa_aln.fas
 	readal -in read2tree_out/03_align_dna/$name.phy -out read2tree_test/$name.dna.fas -fasta
 	sed -i 's/-//g' $name.dna.fas
 	cat ortho/OrthoFinder/CDS_seq/$name.fa >> read2tree_test/$name.dna.fas
@@ -118,7 +118,7 @@ time summarize_orthograph_results.pl -i orthograph -o orthograph_test -d genome.
 for file in ortho/single_copy_ref/*.fa
 do
 	name=`basename $file .fa`
-	mafft --add orthograph_test/aa/$name.aa.summarized.fa --localpair --maxiterate 1000 --thread 20 PhyloAln_00/ref_hmm/$name.aa.fas > orthograph_test/$name.aa_aln.fas
+	mafft --add orthograph_test/aa/$name.aa.summarized.fa --keeplength --localpair --maxiterate 1000 --thread 20 PhyloAln_00/ref_hmm/$name.aa.fas > orthograph_test/$name.aa_aln.fas
 	sed 's/-//g' $file >> orthograph_test/nt/$name.nt.summarized.fa
 	trimal -in orthograph_test/$name.aa_aln.fas -out orthograph_test/$name.fa -keepheader -backtrans orthograph_test/nt/$name.nt.summarized.fa
 done
