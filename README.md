@@ -28,7 +28,7 @@ Raw data source: Crawford, et al. 2015. Molecular Phylogenetics and Evolution 83
 - BLAST=2.8.1
 - Read2Tree=0.1.5
 - IQ-TREE=2.1.4_beta
-- IDBA=1.1.3
+- IDBA=1.1.3  
 The above tools can be installed through Conda and the Conda configure file provided in the repo, using the command:
 ```
 conda install --file requirement.txt
