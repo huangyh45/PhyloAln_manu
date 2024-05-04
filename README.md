@@ -22,7 +22,7 @@ Raw data source: Crawford, et al. 2015. Molecular Phylogenetics and Evolution 83
 - gffread=0.12.1
 - OrthoFinder=2.5.4
 - MAFFT=7.480
-- trimAl=1.4.0
+- trimAl=1.4.1
 - ART=2016.06.05
 - Trinity=2.8.5
 - BLAST=2.8.1
