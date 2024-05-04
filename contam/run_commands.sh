@@ -47,7 +47,7 @@ for file in ortho/single_copy_ref/*.fa
 do
 	name=`basename $file .fa`
 	readal -in read2tree_contam/03_align_aa/$name.phy -out read2tree_test/$name.ref_aa.fas -fasta
-	mafft --add ogs/$name.fa --localpair --maxiterate 1000 --thread 10 read2tree_test/$name.ref_aa.fas > read2tree_test/$name.aa_aln.fas
+	mafft --add ogs/$name.fa --keeplength --localpair --maxiterate 1000 --thread 10 read2tree_test/$name.ref_aa.fas > read2tree_test/$name.aa_aln.fas
 	readal -in read2tree_contam/03_align_dna/$name.phy -out read2tree_test/$name.dna.fas -fasta
 	sed -i 's/-//g' $name.dna.fas
 	cat ortho/OrthoFinder/CDS_seq/$name.fa >> read2tree_test/$name.dna.fas
