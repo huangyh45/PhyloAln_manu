@@ -4,7 +4,7 @@ It should be noticed that the commands provided in each dataset folder are mainl
 
 ### File content
 #### lifetree
-Data and scripts used in the analyses of the simulated dataset across tree of life.  
+Data and scripts used in the analyses of the simulated dataset across tree of life to conduct a comparative analysis of the alignment performance between PhyloAln and Read2Tree using different omic data, sequencing technologies, coverages, and species across tree of life.  
 Files and directories:  
 - CDS_trim: 46 single-copy gene alignments among 15 species using OrthoFinder + MAFFT + trimAl
 - OGs_treelife_read2tree: Read2Tree result alignments
@@ -14,7 +14,7 @@ Files and directories:
 - readsim_multi.py: a custom script to run ReadSim in parallel
 - run_commands.sh: the commands of the analyses in the dataset
 #### contam
-Data and scripts used in the analyses of the simulated dataset of contaminated fruit fly transcriptomes.  
+Data and scripts used in the analyses of the simulated dataset of contaminated fruit fly transcriptomes to evaluate capability of PhyloAln to eliminate foreign and cross cross-contamination and impact of contamination on Read2Tree.  
 Files and directories:  
 - CDS_trim: (in lifetree folder) 46 single-copy gene alignments among 15 species using OrthoFinder + MAFFT + trimAl
 - OGs_fly_read2tree: Read2Tree result alignments
@@ -31,7 +31,7 @@ Files and directories:
 - run_commands.sh: the commands of the analyses in the dataset
 - sample_reads_contam.py: a custom script to generate the simulated contamination dataset by randomly selected reads from the species sources
 #### ladybird
-Data and scripts used in the analyses of the dataset of ladybird beetle transcriptomes.  
+Data and scripts used in the analyses of the dataset of ladybird beetle transcriptomes to assess the performance of PhyloAln, Read2Tree and Orthograph on real transcriptome dataset.  
 Raw data source: Li, et al. 2021. BMC Biology 19:7. http://doi.org/10.1186/s12915-020-00945-7  
 Files and directories:  
 - CDS_trim: 1290 single-copy gene alignments among 12 ladybird genomes
@@ -60,7 +60,7 @@ Files and directories:
 - singlecopy.list: the list of 1290 single-copy genes among 12 ladybird genomes
 - transassemble.pl: a custom script to assemble the transcriptomes
 #### plastome
-Data and scripts used in the analyses of the dataset of pepper plastomes.  
+Data and scripts used in the analyses of the dataset of pepper plastomes to showcase the utility of PhyloAln in handling genes with non-standard genetic codes.  
 Raw data source: Simmonds, et al. 2021. Molecular Phylogenetics and Evolution 163:107229. http://doi.org/10.1016/j.ympev.2021.107229  
 Files and directories:  
 - nt_out: PhyloAln result codon alignments
@@ -70,7 +70,7 @@ Files and directories:
 - run_commands.sh: the commands of the analyses of the dataset
 - speciestree.rooted.tre: phylogeny of PhyloAln result alignments
 #### UCE
-Data and scripts used in the analyses of the dataset of turtle ultraconserved elements (UCEs).  
+Data and scripts used in the analyses of the dataset of turtle ultraconserved elements (UCEs) to evaluate the applicability of PhyloAln on nucleotide datasets such as UCEs.  
 Raw data source: Crawford, et al. 2015. Molecular Phylogenetics and Evolution 83:250-257.  http://doi.org/10.1016/j.ympev.2014.10.021  
 Files and directories:  
 - all.fasta: the downloaded UCE matrix from Crawford, et al. (2015)
