@@ -58,7 +58,7 @@ Files and directories:
 - run_commands.sh: the commands in the analyses of the dataset
 - seq.config: PhyloAln configure file for all the assemblies
 - singlecopy.list: the list of 1290 single-copy genes among 12 ladybird genomes
-- transassemble.pl: a custom script to assemble the transcriptomes
+- transassemble.pl: a custom script to assemble the transcriptomes  
 Note: different batches represent the sequencing batches in which cross-contamination were detected and removed among the species
 #### plastome
 Data and scripts used in the analyses of the dataset of pepper plastomes to showcase the utility of PhyloAln in handling genes with non-standard genetic codes.  
