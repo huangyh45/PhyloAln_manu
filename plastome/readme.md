@@ -1,0 +1,6 @@
+- nt_out: PhyloAln result codon alignments
+- test: de novo codon alignments using predicted genes
+- plastid.config: PhyloAln configure file
+- reftree.rooted.tre: phylogeny of de novo codon alignments using predicted genes
+- run_commands.sh: the commands of the analyses of the dataset
+- speciestree.rooted.tre: phylogeny of PhyloAln result alignments
