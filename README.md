@@ -2,22 +2,88 @@
 ## Data and scripts that reproduce the results and benchmark described in the manuscript "PhyloAln: a convenient reference-based tool to align sequences and high-throughput reads for phylogeny and evolution in the omic era"  
 It should be noticed that the commands provided in each dataset folder are mainly used to provide the parameters for the analyses in the manuscript and may fail to directly rerun due to different file paths, installation and configuration. Detailed description of the procedures can be seen in the methods in the manuscript.  
 
-### Directories
+### File content
 #### lifetree
 Data and scripts used in the analyses of the simulated dataset across tree of life.  
+Files and directories:  
+- CDS_trim: 46 single-copy gene alignments among 15 species using OrthoFinder + MAFFT + trimAl
+- OGs_treelife_read2tree: Read2Tree result alignments
+- phyloaln_nt_out: PhyloAln result alignments
+- orthogroup.pl: (in ladybird folder) a custom script to run OrthoFinder
+- orthomsa.pl: (in ladybird folder) a custom script to align the CDS sequences using OrthoFinder results
+- readsim_multi.py: a custom script to run ReadSim in parallel
+- run_commands.sh: the commands of the analyses in the dataset
 #### contam
 Data and scripts used in the analyses of the simulated dataset of contaminated fruit fly transcriptomes.  
+Files and directories:  
+- CDS_trim: (in lifetree folder) 46 single-copy gene alignments among 15 species using OrthoFinder + MAFFT + trimAl
+- OGs_fly_read2tree: Read2Tree result alignments
+- phyloaln_b_add_nt_out: alignments of 'outgroup contamination' from the target species
+- phyloaln_b_nt_out: PhyloAln result alignments without assembly step
+- phyloaln_nt_out: PhyloAln result alignments with assembly step
+- assemble.add_out.py: a modified assemble.py module to generate the alignments of 'outgroup contamination' from the target species
+- assemble.debug: a modified assemble.py module to obtain the information of species source of the reads removed ot retained during decontamination
+- contam.config: PhyloAln configure file
+- phyloaln_b.aatree.rooted.tre: phylogeny of amino acid PhyloAln result alignments without assembly step
+- phyloaln_b.speciestree.rooted.tre: phylogeny of CDS PhyloAln result alignments without assembly step
+- phyloaln_b_add.aatree.rooted.tre: phylogeny of amino acid alignments of 'outgroup contamination' from the target species
+- phyloaln_b_add.speciestree.rooted.tre: phylogeny of CDS alignments of 'outgroup contamination' from the target species
+- run_commands.sh: the commands of the analyses in the dataset
+- sample_reads_contam.py: a custom script to generate the simulated contamination dataset by randomly selected reads from the species sources
 #### ladybird
 Data and scripts used in the analyses of the dataset of ladybird beetle transcriptomes.  
 Raw data source: Li, et al. 2021. BMC Biology 19:7. http://doi.org/10.1186/s12915-020-00945-7  
+Files and directories:  
+- CDS_trim: 1290 single-copy gene alignments among 12 ladybird genomes
+- orthograph_nt: Orthograph result alignments
+- phyloaln_assembly_nt_out: PhyloAln result alignments using assemblies
+- phyloaln_read_nt_out: PhyloAln result alignments using reads
+- read2tree_result: Read2Tree result alignments
+- single_copy_ref: 126 single-copy gene alignments among all 42 ladybird genomes and transcriptomes
+- 00.config: PhyloAln configure file for 00 batch
+- 01.config: PhyloAln configure file for 01 batch
+- 02.config: PhyloAln configure file for 02 batch
+- 03.config: PhyloAln configure file for 03 batch
+- 04.config: PhyloAln configure file for 04 batch
+- genome.list: the codes for 12 ladybird species with genomes
+- orthograph.conf: Orthograph configure file, also required for rewriteconf.pl
+- orthograph.og.tsv: OG member relationships for Orthograph
+- orthograph.speciestree.rooted.tre: phylogeny of Orthograph result alignments
+- orthogroup.pl: a custom script to run OrthoFinder
+- orthomsa.pl: a custom script to align the CDS sequences using OrthoFinder results
+- phyloaln_assembly.speciestree.rooted.tre: phylogeny of PhyloAln result alignments using the assemblies
+- phyloaln_read.speciestree.rooted.tre: phylogeny of PhyloAln result alignments using the reads
+- read2tree.speciestree.rooted.tre: phylogeny of Read2Tree result alignments
+- rewriteconf.pl: a script to rewrite the Orthograph configure file and help loop to run Orthograph
+- run_commands.sh: the commands in the analyses of the dataset
+- seq.config: PhyloAln configure file for all the assemblies
+- singlecopy.list: the list of 1290 single-copy genes among 12 ladybird genomes
+- transassemble.pl: a custom script to assemble the transcriptomes
 #### plastome
 Data and scripts used in the analyses of the dataset of pepper plastomes.  
 Raw data source: Simmonds, et al. 2021. Molecular Phylogenetics and Evolution 163:107229. http://doi.org/10.1016/j.ympev.2021.107229  
+Files and directories:  
+- nt_out: PhyloAln result codon alignments
+- test: de novo codon alignments using predicted genes
+- plastid.config: PhyloAln configure file
+- reftree.rooted.tre: phylogeny of de novo codon alignments using predicted genes
+- run_commands.sh: the commands of the analyses of the dataset
+- speciestree.rooted.tre: phylogeny of PhyloAln result alignments
 #### UCE
 Data and scripts used in the analyses of the dataset of turtle ultraconserved elements (UCEs).  
 Raw data source: Crawford, et al. 2015. Molecular Phylogenetics and Evolution 83:250-257.  http://doi.org/10.1016/j.ympev.2014.10.021  
+Files and directories:  
+- all.fasta: the downloaded UCE matrix from Crawford, et al. (2015)
+- aln.concatenated.fa: PhyloAln result alignment
+- Graptemys_pseudogeographica.test.tsv: BLAST result of the assembly of Graptemys pseudogeographica reads to the sequences in the matrix
+- reftree.rooted.tre: phylogeny of the downloaded UCE matrix
+- run_commands.sh: the commands of the analyses of the dataset
+- speciestree.rooted.tre: phylogeny of PhyloAln result alignment
+- UCE.config: PhyloAln configure file
+#### requirement.txt
+The Conda configure file of major requirements.
 
-### Software requirements
+### Requirements
 #### Some tools are required in the commands:  
 - gffread=0.12.1
 - OrthoFinder=2.5.4
@@ -33,7 +99,7 @@ The above tools can be installed through Conda and the Conda configure file prov
 ```
 conda install --file requirement.txt
 ```
-The rest tools should be manually installed:
+The rest tools can be manually installed:
 - PhyloAln (and its auxiliary scripts) =0.1.0 (https://github.com/huangyh45/PhyloAln/releases/tag/v0.1.0)
 - ReadSim=1.6 (https://sourceforge.net/projects/readsim/)
 - CroCo=1.1 (https://gitlab.mbb.cnrs.fr/mbb/CroCo)
