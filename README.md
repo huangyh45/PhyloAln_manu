@@ -86,23 +86,23 @@ The Conda configure file of major requirements.
 
 ### Requirements
 #### Some tools are required in the commands:  
-- gffread=0.12.1
-- OrthoFinder=2.5.4
-- MAFFT=7.480
-- trimAl=1.4.1
-- ART=2016.06.05
-- Trinity=2.8.5
-- BLAST=2.8.1
-- Read2Tree=0.1.5
-- IQ-TREE=2.1.4_beta
-- IDBA=1.1.3  
+- gffread=0.12.1 (https://github.com/gpertea/gffread/releases/tag/v0.12.1)
+- OrthoFinder=2.5.4 (https://github.com/davidemms/OrthoFinder/releases/tag/2.5.4)
+- MAFFT=7.480 (https://mafft.cbrc.jp/alignment/software/source.html)
+- trimAl=1.4.1 (https://github.com/inab/trimal/releases/tag/v1.4.1)
+- ART=2016.06.05 (https://www.niehs.nih.gov/research/resources/software/biostatistics/art)
+- Trinity=2.8.5 (https://github.com/trinityrnaseq/trinityrnaseq/releases/tag/Trinity-v2.8.5)
+- BLAST=2.8.1 (https://ftp.ncbi.nlm.nih.gov/blast/executables/blast+/2.8.1/)
+- Read2Tree=0.1.5 (https://github.com/DessimozLab/read2tree/releases/tag/v0.1.5)
+- IQ-TREE=2.1.4_beta (http://www.iqtree.org/#download)
+- IDBA=1.1.3 (https://github.com/loneknightpy/idba/releases/tag/1.1.3)  
 The above tools can be installed through Conda and the Conda configure file provided in the repo, using the command:
 ```
-conda install --file requirement.txt
+conda install --file /your/PhyloAln_manu/path/requirement.txt
 ```
 The rest tools can be manually installed:
 - PhyloAln (and its auxiliary scripts) =0.1.0 (https://github.com/huangyh45/PhyloAln/releases/tag/v0.1.0)
 - ReadSim=1.6 (https://sourceforge.net/projects/readsim/)
 - CroCo=1.1 (https://gitlab.mbb.cnrs.fr/mbb/CroCo)
 - EvidentialGene=2018.06.18 (http://arthropods.eugenes.org/EvidentialGene/other/evigene_old/evigene_older/)
-- Orthograph=0.7.2 (https://github.com/mptrsen/Orthograph)
+- Orthograph=0.7.2 (https://github.com/mptrsen/Orthograph/releases/tag/0.7.2)
