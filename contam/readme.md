@@ -4,11 +4,14 @@
 - phyloaln_b_nt_out: PhyloAln result alignments without assembly step
 - phyloaln_nt_out: PhyloAln result alignments with assembly step
 - assemble.add_out.py: a modified assemble.py module to generate the alignments of 'outgroup contamination' from the target species
-- assemble.debug: a modified assemble.py module to obtain the information of species source of the reads removed ot retained during decontamination
+- assemble.debug.py: a modified assemble.py module to obtain the information of species source of the reads removed ot retained during decontamination
 - contam.config: PhyloAln configure file
 - phyloaln_b.aatree.rooted.tre: phylogeny of amino acid PhyloAln result alignments without assembly step
 - phyloaln_b.speciestree.rooted.tre: phylogeny of CDS PhyloAln result alignments without assembly step
 - phyloaln_b_add.aatree.rooted.tre: phylogeny of amino acid alignments of 'outgroup contamination' from the target species
 - phyloaln_b_add.speciestree.rooted.tre: phylogeny of CDS alignments of 'outgroup contamination' from the target species
-- run_commands.sh: the commands of the analyses in the dataset
+- run_commands.sh: the commands and parameters of the analyses in the dataset, can be opened in a text editor
 - sample_reads_contam.py: a custom script to generate the simulated contamination dataset by randomly selected reads from the species sources
+- sum_contam.py: a custom script to calculate the precision and recall of clean, foreign and cross contamination reads of each single-copy genes in PhyloAln alignments with assembly step
+- sum_contam_b.py: a custom script to calculate the precision and recall of clean, foreign and cross contamination reads of each single-copy genes in PhyloAln alignments without assembly step
+- sum_contam_outgroup.py: a custom script to calculate the average completeness and identity, and the precision and recall of clean, foreign and cross contamination reads of each single-copy genes in PhyloAln alignments with and without assembly step using different Drosophila species as the defined outgroups
