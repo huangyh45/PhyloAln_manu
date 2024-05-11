@@ -19,7 +19,7 @@
 - phyloaln_read.speciestree.rooted.tre: phylogeny of PhyloAln result alignments using the reads
 - read2tree.speciestree.rooted.tre: phylogeny of Read2Tree result alignments
 - rewriteconf.pl: a script to rewrite the Orthograph configure file and help loop to run Orthograph
-- run_commands.sh: the commands in the analyses of the dataset
+- run_commands.sh: the commands and parameters of the analyses in the dataset, can be opened in a text editor
 - seq.config: PhyloAln configure file for all the assemblies
 - singlecopy.list: the list of 1290 single-copy genes among 12 ladybird genomes
 - transassemble.pl: a custom script to assemble the transcriptomes
