@@ -2,5 +2,5 @@
 - test: de novo codon alignments using predicted genes
 - plastid.config: PhyloAln configure file
 - reftree.rooted.tre: phylogeny of de novo codon alignments using predicted genes
-- run_commands.sh: the commands of the analyses of the dataset
+- run_commands.sh: the commands and parameters of the analyses in the dataset, can be opened in a text editor
 - speciestree.rooted.tre: phylogeny of PhyloAln result alignments
