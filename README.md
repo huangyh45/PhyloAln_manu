@@ -12,7 +12,7 @@ Files and directories:
 - orthogroup.pl: (in ladybird folder) a custom script to run OrthoFinder
 - orthomsa.pl: (in ladybird folder) a custom script to align the CDS sequences using OrthoFinder results
 - readsim_multi.py: a custom script to run ReadSim in parallel
-- run_commands.sh: the commands of the analyses in the dataset
+- run_commands.sh: the commands and parameters of the analyses in the dataset, can be opened in a text editor
 #### contam
 Data and scripts used in the analyses of the simulated dataset of contaminated fruit fly transcriptomes to evaluate capability of PhyloAln to eliminate foreign and cross cross-contamination and impact of contamination on Read2Tree.  
 Files and directories:  
@@ -28,7 +28,7 @@ Files and directories:
 - phyloaln_b.speciestree.rooted.tre: phylogeny of CDS PhyloAln result alignments without assembly step
 - phyloaln_b_add.aatree.rooted.tre: phylogeny of amino acid alignments of 'outgroup contamination' from the target species
 - phyloaln_b_add.speciestree.rooted.tre: phylogeny of CDS alignments of 'outgroup contamination' from the target species
-- run_commands.sh: the commands of the analyses in the dataset
+- run_commands.sh: the commands and parameters of the analyses in the dataset, can be opened in a text editor
 - sample_reads_contam.py: a custom script to generate the simulated contamination dataset by randomly selected reads from the species sources
 #### ladybird
 Data and scripts used in the analyses of the dataset of ladybird beetle transcriptomes to assess the performance of PhyloAln, Read2Tree and Orthograph on real transcriptome dataset.  
@@ -55,7 +55,7 @@ Files and directories:
 - phyloaln_read.speciestree.rooted.tre: phylogeny of PhyloAln result alignments using the reads
 - read2tree.speciestree.rooted.tre: phylogeny of Read2Tree result alignments
 - rewriteconf.pl: a script to rewrite the Orthograph configure file and help loop to run Orthograph
-- run_commands.sh: the commands in the analyses of the dataset
+- run_commands.sh: the commands and parameters of the analyses in the dataset, can be opened in a text editor
 - seq.config: PhyloAln configure file for all the assemblies
 - singlecopy.list: the list of 1290 single-copy genes among 12 ladybird genomes
 - transassemble.pl: a custom script to assemble the transcriptomes  
@@ -68,7 +68,7 @@ Files and directories:
 - test: de novo codon alignments using predicted genes
 - plastid.config: PhyloAln configure file
 - reftree.rooted.tre: phylogeny of de novo codon alignments using predicted genes
-- run_commands.sh: the commands of the analyses of the dataset
+- run_commands.sh: the commands and parameters of the analyses in the dataset, can be opened in a text editor
 - speciestree.rooted.tre: phylogeny of PhyloAln result alignments
 #### UCE
 Data and scripts used in the analyses of the dataset of turtle ultraconserved elements (UCEs) to evaluate the applicability of PhyloAln on nucleotide datasets such as UCEs.  
@@ -78,7 +78,7 @@ Files and directories:
 - aln.concatenated.fa: PhyloAln result alignment
 - Graptemys_pseudogeographica.test.tsv: BLAST result of the assembly of Graptemys pseudogeographica reads to the sequences in the matrix
 - reftree.rooted.tre: phylogeny of the downloaded UCE matrix
-- run_commands.sh: the commands of the analyses of the dataset
+- run_commands.sh: the commands and parameters of the analyses in the dataset, can be opened in a text editor
 - speciestree.rooted.tre: phylogeny of PhyloAln result alignment
 - UCE.config: PhyloAln configure file
 #### requirement.txt
