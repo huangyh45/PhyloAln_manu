@@ -4,4 +4,4 @@
 - orthogroup.pl: (in ladybird folder) a custom script to run OrthoFinder
 - orthomsa.pl: (in ladybird folder) a custom script to align the CDS sequences using OrthoFinder results
 - readsim_multi.py: a custom script to run ReadSim in parallel
-- run_commands.sh: the commands of the analyses in the dataset
+- run_commands.sh: the commands and parameters of the analyses in the dataset, can be opened in a text editor
