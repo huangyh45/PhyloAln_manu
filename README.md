@@ -30,6 +30,9 @@ Files and directories:
 - phyloaln_b_add.speciestree.rooted.tre: phylogeny of CDS alignments of 'outgroup contamination' from the target species
 - run_commands.sh: the commands and parameters of the analyses in the dataset, can be opened in a text editor
 - sample_reads_contam.py: a custom script to generate the simulated contamination dataset by randomly selected reads from the species sources
+- sum_contam.py: a custom script to calculate the precision and recall of clean, foreign and cross contamination reads of each single-copy genes in PhyloAln alignments with assembly step
+- sum_contam_b.py: a custom script to calculate the precision and recall of clean, foreign and cross contamination reads of each single-copy genes in PhyloAln alignments without assembly step
+- sum_contam_outgroup.py: a custom script to calculate the average completeness and identity, and the precision and recall of clean, foreign and cross contamination reads of each single-copy genes in PhyloAln alignments with and without assembly step using different Drosophila species as the defined outgroups
 #### ladybird
 Data and scripts used in the analyses of the dataset of ladybird beetle transcriptomes to assess the performance of PhyloAln, Read2Tree and Orthograph on real transcriptome dataset.  
 Raw data source: Li, et al. 2021. BMC Biology 19:7. http://doi.org/10.1186/s12915-020-00945-7  
