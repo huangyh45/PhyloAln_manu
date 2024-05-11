@@ -63,10 +63,13 @@ done
 PhyloAln/PhyloAln -d orthogroup/ortho/OGs_fly -c contam.config -f fasta -o PhyloAln_contam -p 20 -m codon -u SLEBA
 PhyloAln/PhyloAln -d orthogroup/ortho/OGs_fly -c contam.config -f fasta -o PhyloAln_contam_b -p 20 -m codon -u SLEBA -b
 
-# calculate the average percent completeness and identity, and precision and recall of clean, foreign and cross scontamination reads of PhyloAln results with or without assembly step
+# calculate the average percent completeness and identity, and precision and recall of clean, foreign and cross contamination reads of PhyloAln results with or without assembly step
 ./sum_contam.py
 ./sum_contam_b.py
-# the calculated precision and recall needs to be further managed in manual, such as removal of invalid zeros, and calculation of average values
+# replace the outgroup SLEBA with DBUSC, DMOJA, DPSEU, DYAKU respecitively and run all the commands of PhyloAln and test_effect.py above, in order to test the impact of different outgroups
+# calculate the average percent completeness and identity, and precision and recall of clean and foreign contamination reads of PhyloAln results using different outgroups
+./sum_contam_outgroup.py
+# the calculated precision and recall needs to be further managed in manual, such as removal of invalid zeros, calculation of average values, and summary in a new table
 
 # run PhyloAln to generate the alignments of 'outgroup contamination' from the target species, need to manually replace PhyloAln/lib/assemble.py with assemble.add_out.py first
 PhyloAln/PhyloAln -d orthogroup/ortho/OGs_fly -c contam.config -f fasta -o PhyloAln_contam_b_add -p 20 -m codon -u SLEBA -b
