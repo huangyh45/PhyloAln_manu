@@ -22,4 +22,5 @@
 - run_commands.sh: the commands and parameters of the analyses in the dataset, can be opened in a text editor
 - seq.config: PhyloAln configure file for all the assemblies
 - singlecopy.list: the list of 1290 single-copy genes among 12 ladybird genomes
-- transassemble.pl: a custom script to assemble the transcriptomes
+- transassemble.pl: a custom script to assemble the transcriptomes 
+  ##### Note: different batches represent the sequencing batches in which cross-contamination were detected and removed among the species by CroCo or PhyloAln
