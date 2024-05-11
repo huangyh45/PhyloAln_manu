@@ -1,4 +1,5 @@
 # assemble the transcriptomes via a custom script for 00-04 batches respectively
+# different batches represent the sequencing batches in which cross contamination among the species was removal
 time ./transassemble.pl -n 20 -p 1 -T -C 1 -R 2 -E
 
 # run OrthoFinder and generate the CDS alignments via custom scripts
